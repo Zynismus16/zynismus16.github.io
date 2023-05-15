@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>k-lite on Hello World</title>
+    <link>https://zynismus16.github.io/tags/k-lite/</link>
+    <description>Recent content in k-lite on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 13 Apr 2023 11:09:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/k-lite/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决索尼相机拍摄素材在win10上无法显示缩略图的问题</title>
+      <link>https://zynismus16.github.io/posts/103/</link>
+      <pubDate>Thu, 13 Apr 2023 11:09:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/103/</guid>
+      <description>目前推测是因为视频色彩空间不同导致的，测试电脑对4:2:0色彩的视频能够生成缩略图但速度较慢，对4:2:2色彩的视频无法生成缩略图。 网上查找</description>
+      <content:encoded><![CDATA[<p>目前推测是因为视频色彩空间不同导致的，测试电脑对4:2:0色彩的视频能够生成缩略图但速度较慢，对4:2:2色彩的视频无法生成缩略图。
+网上查找后发现安装 <strong>K-Lite Codec Pack</strong> 可解决。
+安装完成后成功显示4:2:2色彩的缩略图，4:2:0的缩略图显示速度有明显提升。</p>
+<p>软件官网：<a href="http://www.codecguide.com/">Codec Guide: K-Lite Codec Pack - For Windows 11 / 10 / 8.1 / 7</a>
+分流下载：</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

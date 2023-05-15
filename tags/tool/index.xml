@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>tool on Hello World</title>
+    <link>https://zynismus16.github.io/tags/tool/</link>
+    <description>Recent content in tool on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 17 Jan 2023 06:33:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Office Tool Plus部署Ofiice 2021</title>
+      <link>https://zynismus16.github.io/posts/27/</link>
+      <pubDate>Tue, 17 Jan 2023 06:33:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/27/</guid>
+      <description>安装 下载 点击该链接下载 Office Tool Plus，或访问 Office Tool Plus 官网 下载压缩包。 下载完成后解压压缩包得到以下文件 双击打开 Office Tool Plus.exe 部署 点击左边部署 按下图配置 添加</description>
+      <content:encoded><![CDATA[<h1 id="安装">安装</h1>
+<ol>
+<li>下载
+点击该链接下载 <a href="https://otp.landian.vip/redirect/download.php?type=runtime&amp;site=yuntu">Office Tool Plus</a>，或访问 Office Tool Plus <a href="https://otp.landian.vip/zh-cn/">官网</a> 下载压缩包。
+下载完成后解压压缩包得到以下文件
+<img loading="lazy" src="https://img1.imgtp.com/2023/02/16/39eSbf7C.png" alt="1676523160095.png"  />
+
+双击打开  <code>Office Tool Plus.exe</code></li>
+</ol>
+<p><img loading="lazy" src="https://img1.imgtp.com/2023/02/16/DBcnqESe.png" alt="1676523252598.png"  />
+</p>
+<ol start="2">
+<li>部署
+点击左边<code>部署</code></li>
+</ol>
+<p><img loading="lazy" src="https://img1.imgtp.com/2023/02/16/j5ch1xUz.png" alt="1676523297126.png"  />
+</p>
+<p>按下图配置</p>
+<p><img loading="lazy" src="https://img1.imgtp.com/2023/02/16/MfqgJ3eE.png" alt="1676523587851.png"  />
+</p>
+<ol start="3">
+<li>添加产品
+产品中点击右方<code>添加产品</code></li>
+</ol>
+<p><img loading="lazy" src="https://img1.imgtp.com/2023/02/16/p2gsscQC.png" alt="1676523658180.png"  />
+</p>
+<p>添加 <code>Office 专业增强版 2021</code></p>
+<p>下方应用程序可按照需求选择，如只需要Word Excel PPT 就按照下图选择
+<img loading="lazy" src="https://img1.imgtp.com/2023/02/16/URoUIaSB.png" alt="1676523814775.png"  />
+</p>
+<ol start="4">
+<li>开始部署
+选择完成后点击页面最上方 <code>开始部署</code>
+<img loading="lazy" src="https://img1.imgtp.com/2023/02/16/sVbnhZdY.png" alt="1676523889180.png"  />
+
+等待下载完成并部署完成
+<img loading="lazy" src="https://img1.imgtp.com/2023/02/16/ldv7KIWL.png" alt="1676523933759.png"  />
+</li>
+</ol>
+<h1 id="激活">激活</h1>
+<p>部署完成后点击页面左方<code>激活</code>
+<img loading="lazy" src="https://img1.imgtp.com/2023/02/16/VOl4ODem.png" alt="1676524022283.png"  />
+</p>
+<ol>
+<li>
+<p>许可证安装
+选择许可证管理并点击<code>安装许可证</code>
+<img loading="lazy" src="https://img1.imgtp.com/2023/02/16/mj0U6Omt.png" alt="1676524070671.png"  />
+
+选择 <code>Office LTSC 专业增强版 2021 -批量许可证</code>
+<img loading="lazy" src="https://img1.imgtp.com/2023/02/16/xclwAGoj.png" alt="1676524919045.png"  />
+
+界面最下方有安装进度，等待所有许可证安装完成。
+<img loading="lazy" src="https://img1.imgtp.com/2023/02/16/dtoGUszV.png" alt="1676524299520.png"  />
+</p>
+</li>
+<li>
+<p>KSM主机设置
+安完成后选择上方 <code>KSM管理</code> ，并在 <code>KSM主机</code> 栏填入KSM 主机地址：kms.loli.best
+这里提供其他KSM主机列表，可选择其他主机地址： <a href="https://www.coolhub.top/tech-articles/kms_list.html">KMS 列表 | Yerong の小窝 (coolhub.top)</a>
+<img loading="lazy" src="https://img1.imgtp.com/2023/02/16/fOqcdBNR.png" alt="1676524474868.png"  />
+
+填入KSM主机地址后点击 <code>设置主机</code></p>
+</li>
+</ol>
+<p>最后点击<code>激活</code>并等待程序运行完成即可。
+<img loading="lazy" src="https://img1.imgtp.com/2023/02/16/SAXJIpNh.png" alt="1676524788754.png"  />
+</p>
+<p>Tip：
+如果输出区提示激活失败，红色字体提示许可证未安装时可尝试卸载许可证后重新安装类似产品的许可证。
+<img loading="lazy" src="https://img1.imgtp.com/2023/02/16/oqF7spVE.png" alt="1676524883781.png"  />
+</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

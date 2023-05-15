@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>评论 on Hello World</title>
+    <link>https://zynismus16.github.io/tags/%E8%AF%84%E8%AE%BA/</link>
+    <description>Recent content in 评论 on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 14 Sep 2022 10:49:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/%E8%AF%84%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>author.php打造用户中心社区的参数调用和使用方法</title>
+      <link>https://zynismus16.github.io/posts/14/</link>
+      <pubDate>Wed, 14 Sep 2022 10:49:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/14/</guid>
+      <description>typecho的author.php文件 是用户页面，但是官网给予的参考文档很少，很多人也是直接忽略掉了这个页面 我也是通过打印$this 获取了</description>
+      <content:encoded><![CDATA[<p>typecho的<code>author.php</code>文件</p>
+<p>是用户页面，但是官网给予的参考文档很少，很多人也是直接忽略掉了这个页面</p>
+<p>我也是通过打印<code>$this</code></p>
+<p>获取了我们大概能调用，有用的东西</p>
+<p>例如：获取当前用户的信息</p>
+<pre tabindex="0"><code>$userInfo = (object)$this-&gt;pageRow;
+print_r($userInfo-&gt;screenName);
+</code></pre><p>具体可调用参数，可打印print_r($userInfo)来查看</p>
+<p>输出该作者的文章，这里跟列表页面一样的</p>
+<p>至于为什么？</p>
+<p><code>archive.php</code> 通用（分类、搜索、标签、作者）页面文件</p>
+<p>可以看结构，这四个页面能调用的东西都大致相同</p>
+<pre tabindex="0"><code>&lt;?php if ($this-&gt;have()): ?&gt;
+  &lt;?php while($this-&gt;next()): ?&gt;
+  内容
+  &lt;?php endwhile; ?&gt;
+&lt;?php else: ?&gt;
+    &lt;article class=&#34;article-post&#34;&gt;
+        &lt;div class=&#34;content-null&#34;&gt;
+            &lt;p&gt;空空如也~&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+&lt;?php endif; ?&gt;
+</code></pre><p>输出这个人的评论</p>
+<p>需要在 <code>functions.php</code> 添加代码</p>
+<pre tabindex="0"><code>/*输出作者发表的评论*/
+class Widget_Post_AuthorComment extends Widget_Abstract_Comments
+{
+    var $getAuthorUid;
+
+    public function execute()
+    {
+        global $AuthorCommentId;//全局作者id
+        $select  = $this-&gt;select()-&gt;limit($this-&gt;parameter-&gt;pageSize)
+        -&gt;where(&#39;table.comments.status = ?&#39;, &#39;approved&#39;)
+        -&gt;where(&#39;table.comments.authorId = ?&#39;,$this-&gt;parameter-&gt;authorId)//获取作者id
+        -&gt;where(&#39;table.comments.type = ?&#39;, &#39;comment&#39;)
+        -&gt;order(&#39;table.comments.coid&#39;, Typecho_Db::SORT_DESC);//根据coid排序
+        $this-&gt;db-&gt;fetchAll($select, array($this, &#39;push&#39;));
+    }
+}
+</code></pre><p>然后再 <code>author.php</code> 可以调用</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;widget(&#39;Widget_Post_AuthorComment@author&#39;,&#39;pageSize=8&amp;authorId=用户id&#39;)-&gt;to($AuthorComment); ?&gt;
+&lt;?php if ($AuthorComment-&gt;have()): ?&gt;
+    &lt;?php while($AuthorComment-&gt;next()): ?&gt;
+
+    //循环处
+    //可调用参数
+    //$AuthorComment-&gt;permalink(); 该评论所属文章链接
+    //$AuthorComment-&gt;title();该评论所属文章标题
+    //$AuthorComment-&gt;content();该评论内容
+    //$AuthorComment-&gt;dateWord();该评论时间
+
+    &lt;?php endwhile; ?&gt;
+    &lt;?php else: ?&gt;
+    &lt;div class=&#34;text-center&#34;&gt;&lt;div class=&#34;icon-svg svg-empty&#34;&gt;&lt;/div&gt;&lt;div class=&#34;text-muted&#34;&gt;看起来这里没有任何东西。&lt;/div&gt;&lt;/div&gt;
+    &lt;?php endif; ?&gt;
+</code></pre>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

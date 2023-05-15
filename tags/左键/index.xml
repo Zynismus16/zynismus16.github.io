@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>左键 on Hello World</title>
+    <link>https://zynismus16.github.io/tags/%E5%B7%A6%E9%94%AE/</link>
+    <description>Recent content in 左键 on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 14 Feb 2023 20:50:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/%E5%B7%A6%E9%94%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>网页禁用左右键</title>
+      <link>https://zynismus16.github.io/posts/44/</link>
+      <pubDate>Tue, 14 Feb 2023 20:50:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/44/</guid>
+      <description>先来一种最简单的方法，它直接在body属性定义了oncontextmenu，使得右键的值为false，起到了屏蔽右键的效果。 &amp;lt;body oncontextmenu=self.event.returnValue=false&amp;gt; 复制 这个方式</description>
+      <content:encoded><![CDATA[<p>先来一种最简单的方法，它直接在body属性定义了oncontextmenu，使得右键的值为false，起到了屏蔽右键的效果。</p>
+<pre tabindex="0"><code>&lt;body oncontextmenu=self.event.returnValue=false&gt;
+</code></pre><p>复制</p>
+<p>这个方式虽然屏蔽掉了右键的功能，但是左键还可以使用，自然Ctrl+c,Ctrl+v的功能还是可以用的，这时需要屏蔽掉左键，可是要屏蔽左键不是就废掉了，别急，这里只是屏蔽掉左键的选定功能，代码如下：</p>
+<pre tabindex="0"><code>&lt;body onselectstart=&#34;return false&#34;&gt;
+</code></pre><p>复制</p>
+<p>左右键联合起来，就彻底控制了左右键：</p>
+<pre tabindex="0"><code>&lt;body oncontextmenu=self.event.returnValue=false onselectstart=&#34;return false&#34;&gt;
+</code></pre>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

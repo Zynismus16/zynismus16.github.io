@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>页面 on Hello World</title>
+    <link>https://zynismus16.github.io/tags/%E9%A1%B5%E9%9D%A2/</link>
+    <description>Recent content in 页面 on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 14 Sep 2022 10:49:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/%E9%A1%B5%E9%9D%A2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>author.php打造用户中心社区的参数调用和使用方法</title>
+      <link>https://zynismus16.github.io/posts/14/</link>
+      <pubDate>Wed, 14 Sep 2022 10:49:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/14/</guid>
+      <description>typecho的author.php文件 是用户页面，但是官网给予的参考文档很少，很多人也是直接忽略掉了这个页面 我也是通过打印$this 获取了</description>
+      <content:encoded><![CDATA[<p>typecho的<code>author.php</code>文件</p>
+<p>是用户页面，但是官网给予的参考文档很少，很多人也是直接忽略掉了这个页面</p>
+<p>我也是通过打印<code>$this</code></p>
+<p>获取了我们大概能调用，有用的东西</p>
+<p>例如：获取当前用户的信息</p>
+<pre tabindex="0"><code>$userInfo = (object)$this-&gt;pageRow;
+print_r($userInfo-&gt;screenName);
+</code></pre><p>具体可调用参数，可打印print_r($userInfo)来查看</p>
+<p>输出该作者的文章，这里跟列表页面一样的</p>
+<p>至于为什么？</p>
+<p><code>archive.php</code> 通用（分类、搜索、标签、作者）页面文件</p>
+<p>可以看结构，这四个页面能调用的东西都大致相同</p>
+<pre tabindex="0"><code>&lt;?php if ($this-&gt;have()): ?&gt;
+  &lt;?php while($this-&gt;next()): ?&gt;
+  内容
+  &lt;?php endwhile; ?&gt;
+&lt;?php else: ?&gt;
+    &lt;article class=&#34;article-post&#34;&gt;
+        &lt;div class=&#34;content-null&#34;&gt;
+            &lt;p&gt;空空如也~&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+&lt;?php endif; ?&gt;
+</code></pre><p>输出这个人的评论</p>
+<p>需要在 <code>functions.php</code> 添加代码</p>
+<pre tabindex="0"><code>/*输出作者发表的评论*/
+class Widget_Post_AuthorComment extends Widget_Abstract_Comments
+{
+    var $getAuthorUid;
+
+    public function execute()
+    {
+        global $AuthorCommentId;//全局作者id
+        $select  = $this-&gt;select()-&gt;limit($this-&gt;parameter-&gt;pageSize)
+        -&gt;where(&#39;table.comments.status = ?&#39;, &#39;approved&#39;)
+        -&gt;where(&#39;table.comments.authorId = ?&#39;,$this-&gt;parameter-&gt;authorId)//获取作者id
+        -&gt;where(&#39;table.comments.type = ?&#39;, &#39;comment&#39;)
+        -&gt;order(&#39;table.comments.coid&#39;, Typecho_Db::SORT_DESC);//根据coid排序
+        $this-&gt;db-&gt;fetchAll($select, array($this, &#39;push&#39;));
+    }
+}
+</code></pre><p>然后再 <code>author.php</code> 可以调用</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;widget(&#39;Widget_Post_AuthorComment@author&#39;,&#39;pageSize=8&amp;authorId=用户id&#39;)-&gt;to($AuthorComment); ?&gt;
+&lt;?php if ($AuthorComment-&gt;have()): ?&gt;
+    &lt;?php while($AuthorComment-&gt;next()): ?&gt;
+
+    //循环处
+    //可调用参数
+    //$AuthorComment-&gt;permalink(); 该评论所属文章链接
+    //$AuthorComment-&gt;title();该评论所属文章标题
+    //$AuthorComment-&gt;content();该评论内容
+    //$AuthorComment-&gt;dateWord();该评论时间
+
+    &lt;?php endwhile; ?&gt;
+    &lt;?php else: ?&gt;
+    &lt;div class=&#34;text-center&#34;&gt;&lt;div class=&#34;icon-svg svg-empty&#34;&gt;&lt;/div&gt;&lt;div class=&#34;text-muted&#34;&gt;看起来这里没有任何东西。&lt;/div&gt;&lt;/div&gt;
+    &lt;?php endif; ?&gt;
+</code></pre>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Typecho部分系统文件用途</title>
+      <link>https://zynismus16.github.io/posts/25/</link>
+      <pubDate>Tue, 13 Jul 2021 08:03:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/25/</guid>
+      <description>typecho后台的文件简单的功能对照说明，因为是本人自行的琢磨，没有看任何文档，所以肯定会有不足，不足之处请回复说明。发这个的原因是我觉得</description>
+      <content:encoded><![CDATA[<p>typecho后台的文件简单的功能对照说明，因为是本人自行的琢磨，没有看任何文档，所以肯定会有不足，不足之处请回复说明。发这个的原因是我觉得这样详细列出来，方便各位基友修改/重构typecho的后台模板。</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>welcome.php</td>
+<td>博客首次安装成功的欢迎界面</td>
+</tr>
+<tr>
+<td>common.php</td>
+<td>检测是否为第一次登陆，检测程序是否可有升级</td>
+</tr>
+<tr>
+<td>common-js.php</td>
+<td>消息处理及后台菜单展开的js</td>
+</tr>
+<tr>
+<td>upgrade.php</td>
+<td>程序升级引导</td>
+</tr>
+<tr>
+<td>login.php</td>
+<td>登陆界面</td>
+</tr>
+<tr>
+<td>register.php</td>
+<td>用户注册页面</td>
+</tr>
+<tr>
+<td>header.php</td>
+<td>头部加载css和js等</td>
+</tr>
+<tr>
+<td>copyright.php</td>
+<td>版权声明</td>
+</tr>
+<tr>
+<td>form-js.php</td>
+<td>form对应的js</td>
+</tr>
+<tr>
+<td>table-js.php</td>
+<td>table对应的js</td>
+</tr>
+<tr>
+<td>footer.php</td>
+<td>页脚</td>
+</tr>
+<tr>
+<td>menu.php</td>
+<td>菜单导航条</td>
+</tr>
+<tr>
+<td>extending.php</td>
+<td>插件拓展后台菜单的接口</td>
+</tr>
+<tr>
+<td>page-title.php</td>
+<td>页面标题</td>
+</tr>
+<tr>
+<td>index.php</td>
+<td>进入后台的首页，对应菜单为网站概要</td>
+</tr>
+<tr>
+<td>profile.php</td>
+<td>个人设置</td>
+</tr>
+<tr>
+<td>plugins.php</td>
+<td>插件管理</td>
+</tr>
+<tr>
+<td>options-plugin.php</td>
+<td>插件设置页面</td>
+</tr>
+<tr>
+<td>themes.php</td>
+<td>网站外观</td>
+</tr>
+<tr>
+<td>theme-editor.php</td>
+<td>编辑模板的页面</td>
+</tr>
+<tr>
+<td>options-theme.php</td>
+<td>设置模板的页面即模板后台</td>
+</tr>
+<tr>
+<td>write-post.php</td>
+<td>文章撰写页面</td>
+</tr>
+<tr>
+<td>write-js.php</td>
+<td>撰写文章/页面时的发布时间，标签，分类，保存草稿，高价设置</td>
+</tr>
+<tr>
+<td>file-upload.php</td>
+<td>文章/页面附件上传，及管理界面</td>
+</tr>
+<tr>
+<td>file-upload-js.php</td>
+<td>文章/页面附件上传，及管理功能</td>
+</tr>
+<tr>
+<td>custom-fields.php</td>
+<td>自定义字段界面</td>
+</tr>
+<tr>
+<td>custom-fields-js.php</td>
+<td>自定义字段功能实现</td>
+</tr>
+<tr>
+<td>editor-js.php</td>
+<td>编辑器</td>
+</tr>
+<tr>
+<td>write-page.php</td>
+<td>创建页面</td>
+</tr>
+<tr>
+<td>manage-posts.php</td>
+<td>管理文章界面</td>
+</tr>
+<tr>
+<td>manage-pages.php</td>
+<td>管理页面界面</td>
+</tr>
+<tr>
+<td>manage-comments.php</td>
+<td>管理评论界面</td>
+</tr>
+<tr>
+<td>manage-categories.php</td>
+<td>管理分类界面</td>
+</tr>
+<tr>
+<td>category.php</td>
+<td>某个分类的编辑页面</td>
+</tr>
+<tr>
+<td>manage-tags.php</td>
+<td>管理标签界面</td>
+</tr>
+<tr>
+<td>manage-medias.php</td>
+<td>所有文章的附件管理页面</td>
+</tr>
+<tr>
+<td>media.php</td>
+<td>某个附件的管理</td>
+</tr>
+<tr>
+<td>manage-users.php</td>
+<td>所有用户管理页面</td>
+</tr>
+<tr>
+<td>user.php</td>
+<td>编辑某个用户</td>
+</tr>
+<tr>
+<td>options-general.php</td>
+<td>网站基本设置页面</td>
+</tr>
+<tr>
+<td>options-discussion.php</td>
+<td>评论设置页面</td>
+</tr>
+<tr>
+<td>options-reading.php</td>
+<td>阅读设置页面</td>
+</tr>
+<tr>
+<td>options-permalink.php</td>
+<td>永久链接设置页面</td>
+</tr>
+</tbody>
+</table>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

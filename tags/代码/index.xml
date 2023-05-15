@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>代码 on Hello World</title>
+    <link>https://zynismus16.github.io/tags/%E4%BB%A3%E7%A0%81/</link>
+    <description>Recent content in 代码 on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 12 Oct 2022 10:49:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Typecho主题前台实现删除文章功能</title>
+      <link>https://zynismus16.github.io/posts/13/</link>
+      <pubDate>Wed, 12 Oct 2022 10:49:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/13/</guid>
+      <description>将下面的代码放到 post.php 中即可 &amp;lt;?php Typecho_Widget::widget(&amp;#39;Widget_Security&amp;#39;)-&amp;gt;to($security); ?&amp;gt; &amp;lt;a href=&amp;#34;&amp;lt;?php $security-&amp;gt;index(&amp;#39;/action/contents-post-edit?do=delete&amp;amp;cid=&amp;#39;.$this-&amp;gt;cid); ?&amp;gt;&amp;#34;&amp;gt;删除文章&amp;lt;/a&amp;gt; 点击按钮立即删除文章！ 上面的代码虽然实现了功能，</description>
+      <content:encoded><![CDATA[<p>将下面的代码放到 <code>post.php</code> 中即可</p>
+<pre tabindex="0"><code>&lt;?php Typecho_Widget::widget(&#39;Widget_Security&#39;)-&gt;to($security); ?&gt;
+&lt;a href=&#34;&lt;?php $security-&gt;index(&#39;/action/contents-post-edit?do=delete&amp;cid=&#39;.$this-&gt;cid); ?&gt;&#34;&gt;删除文章&lt;/a&gt;
+</code></pre><p>点击按钮立即删除文章！</p>
+<p>上面的代码虽然实现了功能，但却泯灭了人性！下面我们完善下人性部分,代码改为</p>
+<pre tabindex="0"><code>&lt;?php Typecho_Widget::widget(&#39;Widget_Security&#39;)-&gt;to($security); ?&gt;
+&lt;a href=&#34;&lt;?php $security-&gt;index(&#39;/action/contents-post-edit?do=delete&amp;cid=&#39;.$this-&gt;cid); ?&gt;&#34; onclick=&#34;javascript:return p_del()&#34;&gt;删除文章&lt;/a&gt;
+&lt;script&gt;
+function p_del() {
+    var msg = &#34;您真的确定要删除吗？&#34;;
+    if (confirm(msg)==true){
+        return true;
+    }else{
+        return false;
+    }
+}
+&lt;/script&gt;
+</code></pre><p>这样弄好，点击按钮会弹出确认框，问其是否删除文章，用户确认后才会删除，比较符合操作习惯！</p>
+<p><code>post.php </code>页面成功删除文章后，因为文章不存在了，所以页面自动跳到了 404 页面</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

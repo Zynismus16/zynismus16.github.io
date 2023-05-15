@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>输出 on Hello World</title>
+    <link>https://zynismus16.github.io/tags/%E8%BE%93%E5%87%BA/</link>
+    <description>Recent content in 输出 on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 11 May 2022 10:53:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/%E8%BE%93%E5%87%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Typecho常用函数</title>
+      <link>https://zynismus16.github.io/posts/16/</link>
+      <pubDate>Wed, 11 May 2022 10:53:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/16/</guid>
+      <description>Typecho常用函数： 1、网站名称 &amp;lt;?php $this-&amp;gt;options-&amp;gt;title() ?&amp;gt; 2、网站网址 &amp;lt;?php $this-&amp;gt;options -&amp;gt;siteUrl(); ?&amp;gt; 3、站点说明 &amp;lt;?php $this-&amp;gt;options-&amp;gt;description() ?&amp;gt; 4、文章完整路径和标题 &amp;lt;?php $this-&amp;gt;archiveTitle(&amp;#39; &amp;amp;raquo; &amp;#39;, &amp;lt; span class=&amp;#34;string&amp;#34;&amp;gt;&amp;#39;&amp;#39;, &amp;#39; | &amp;#39;); ?&amp;gt;&amp;lt;?php $this -&amp;gt;options-&amp;gt;title(); ?&amp;gt; 5、模板地</description>
+      <content:encoded><![CDATA[<p>Typecho常用函数：</p>
+<p>1、网站名称</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;options-&gt;title() ?&gt;
+</code></pre><p>2、网站网址</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;options -&gt;siteUrl(); ?&gt;
+</code></pre><p>3、站点说明</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;options-&gt;description() ?&gt;
+</code></pre><p>4、文章完整路径和标题</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;archiveTitle(&#39; &amp;raquo; &#39;, &lt; span class=&#34;string&#34;&gt;&#39;&#39;, &#39; | &#39;); ?&gt;&lt;?php $this -&gt;options-&gt;title(); ?&gt;
+</code></pre><p>5、模板地址</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;options-&gt;themeUrl(); ?&gt;
+</code></pre><p>6、导入模板文件夹内的php文件</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;need(&#39;.php&#39;); ?&gt;
+</code></pre><p>7、输出文章或单页面的作者</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;author(); ?&gt;
+</code></pre><p>8、输出作者gravatar头像</p>
+<pre tabindex="0"><code>//此处是输出完整的 img 标签，40 是头像的宽高
+
+&lt; ?php $this-&gt;author-&gt;gravatar(&#39;40&#39;) ?&gt;
+</code></pre><p>9、作者文章列表链接</p>
+<pre tabindex="0"><code>//Typecho支持多用户博客时，按作者获取该作者文章连接
+
+&lt;?php $this-&gt;author-&gt;permalink (); ?&gt;
+</code></pre><p>10、作者个人主页链接</p>
+<pre tabindex="0"><code>//Typecho 支持多用户博客，此处输出作者个人主页地址
+
+&lt;?php $this-&gt;author-&gt;url(); ?&gt;
+</code></pre><p>11 、作者的邮箱地址</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;author-&gt;mail(); ?&gt;
+</code></pre><p>12、上一篇与下一篇调用代码</p>
+<pre tabindex="0"><code>// 上一篇
+
+&lt;?php $this-&gt;thePrev(); ?&gt;
+
+// 下一篇
+
+&lt;?php $this-&gt;theNext(); ?&gt;
+</code></pre><p>13、typecho中is语法是否为首页并输出相关内容</p>
+<pre tabindex="0"><code>&lt;?php if ($this-&gt;is(&#39;index&#39;)): ?&gt;
+
+// 首页输出内容
+
+&lt;?php elseif ($this-&gt;is(&#39;category&#39;)): ?&gt;
+
+// 按照分类输出内容
+
+&lt;?php else: ?&gt;
+
+// 不是首页、分类输出内容
+
+&lt;?php endif; ?&gt;
+</code></pre><p>14、获取文章或页面评论数</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;commentsNum(&#39;No Comments&#39;, &#39;1 Comment&#39; , &#39;%d Comments&#39;); ?&gt;
+</code></pre><p>15、截取文章指定字数（可用于首页显示文章摘要）</p>
+<pre tabindex="0"><code>// 截取350字并以&#34;...&#34;结尾
+
+&lt;?php $this-&gt;excerpt(350, &#39;...&#39;); ?&gt;
+</code></pre><p>16、调用自定义字段</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;fields-&gt;fieldName ?&gt;
+</code></pre><p>17、获取 RSS 地址</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;options-&gt;feedUrl(); ?&gt;
+</code></pre><p>18、获取最新文章</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;widget(&#39;Widget_Contents_Post_Recent&#39;, &#39;pageSize=8&amp;type=category&#39;)-&gt;parse(&#39;&lt;li&gt;&lt;a href=&#34;{permalink}&#34;&gt;{title}&lt;/a&gt;&lt;/li&gt;&#39;); ?&gt;
+</code></pre><p>19、获取分类名称，不带链接</p>
+<pre tabindex="0"><code>// 不带连接的获取分类
+
+&lt;?php $this-&gt;category(&#39;,&#39;, false); ?&gt;
+
+// 获取所有分类
+
+&lt;?php $this-&gt;widget(&#39;Widget_Metas_Category_List&#39;)-&gt;listCategories(&#39;wrapClass=widget-list&#39;); ?&gt;
+
+// 自定义分类
+
+&lt;?php $category = NULL; $this-&gt;widget(&#39;Widget_Metas_Category_List&#39;)-&gt;to($category); ?&gt;
+
+&lt;?php while ($category-&gt;next()): ?&gt;
+
+&lt;a class=&#34;list-group-item list-group-item-action&#34; title=&#34;&lt;?php $category-&gt;description(); ?&gt;&#34; href=&#34;&lt;?php $category-&gt;permalink(); ?&gt;&#34;&gt;&lt;?php $category-&gt;name(); ?&gt;&lt;/a&gt;
+
+&lt;?php endwhile; ?&gt;
+</code></pre><p>20、获取文章分类列表</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;widget(&#39;Widget_Metas_Category_List&#39;)-&gt;parse(&#39;&lt;li&gt;&lt;a href=&#34;{permalink}&#34;&gt;{name}&lt;/a&gt; ({count})&lt;/li&gt;&#39;); ?&gt;
+</code></pre><p>21、获取某分类下的POST文章</p>
+<pre tabindex="0"><code>// 注意参数 mid=1
+
+&lt;?php $this-&gt;widget(&#39;Widget_Archive@index&#39;, &#39;pageSize=8&amp;type=category&#39;, &#39;mid=1&#39;)
+
+-&gt;parse(&#39;&lt;li&gt;&lt;a href=&#34;{permalink}&#34; title=&#34;{title}&#34;&gt;{title}&lt;/a&gt;&lt;/li&gt;&#39;); ?&gt;
+</code></pre><p>22、获取最新评论列表</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;widget(&#39;Widget_Comments_Recent&#39;)-&gt;to($comments); ?&gt;
+
+&lt;?php while($comments-&gt;next()): ?&gt;
+
+    &lt;li&gt;
+        &lt;a href=&#34;&lt;?php $comments-&gt;permalink(); ?&gt;&#34;&gt;
+
+           &lt;?php $comments-&gt;author(false); ?&gt;
+
+        &lt;/a&gt;: &lt;?php $comments-&gt;excerpt(50, &#39;...&#39;); ?&gt;
+
+    &lt;/li&gt;
+
+&lt;?php endwhile; ?&gt;
+</code></pre><p>23、首页获取限制条数的最新文章(可用于置顶操作类)</p>
+<pre tabindex="0"><code>&lt;?php while ($this-&gt;next()): ?&gt;
+
+&lt;?php if ($this-&gt;sequence &lt;= 3): ?&gt;
+
+    //这里编写html逻辑
+
+&lt;?php endif; ?&gt;
+
+&lt;?php endwhile; ?&gt;
+</code></pre><p>24、获取访客最新评论，只显示访客评论不显示博主自己发的评论</p>
+<pre tabindex="0"><code>&lt;?php $this-&gt;widget(&#39;Widget_Comments_Recent&#39;,&#39;ignoreAuthor=true&#39;)-&gt;to($comments); ?&gt;
+
+    &lt;?php while($comments-&gt;next()): ?&gt;
+
+    &lt;li&gt;&lt;a href=&#34;&lt;?php $comments-&gt;permalink(); ?&gt;&#34;&gt;&lt;?php $comments-&gt;author(false); ?&gt;&lt;/a&gt;: &lt;?php $comments-&gt;excerpt(50, &#39;...&#39;); ?&gt;&lt;/li&gt;
+
+&lt;?php endwhile; ?&gt;
+</code></pre><p>25、文章按时间归档</p>
+<pre tabindex="0"><code>&lt;?php
+     $this-&gt;widget(&#39;Widget_Contents_Post_Date&#39;, &#39;type=month&amp;format=F Y&#39;)-&gt;parse(&#39;&lt;li&gt;&lt;a href=&#34;{permalink}&#34;&gt;{date}&lt;/a&gt;&lt;/li&gt;&#39;);
+?&gt;
+</code></pre><p>26、获取标签云</p>
+<pre tabindex="0"><code>// 输出标签云
+
+&lt;?php $this-&gt;widget(&#39;Widget_Metas_Tag_Cloud&#39;, &#39;sort=mid&amp;ignoreZeroCount=1&amp;desc=0&amp;limit=30&#39;)-&gt;to($tags); ?&gt;
+
+&lt;?php if($tags-&gt;have()): ?&gt;
+
+&lt;ul class=&#34;tags-list&#34;&gt;
+
+&lt;?php while ($tags-&gt;next()): ?&gt;
+
+    &lt;li&gt;&lt;a href=&#34;&lt;?php $tags-&gt;permalink(); ?&gt;&#34; rel=&#34;tag&#34; class=&#34;size-&lt;?php $tags-&gt;split(5, 10, 20, 30); ?&gt;&#34; title=&#34;&lt;?php $tags-&gt;count(); ?&gt; 个话题&#34;&gt;&lt;?php $tags-&gt;name(); ?&gt;&lt;/a&gt;&lt;/li&gt;
+
+&lt;?php endwhile; ?&gt;
+
+&lt;?php else: ?&gt;
+
+    &lt;li&gt;&lt;?php _e(&#39;没有任何标签&#39;); ?&gt;&lt;/li&gt;
+
+&lt;?php endif; ?&gt;
+
+&lt;/ul&gt;
+
+// 输出随机颜色标签云
+
+&lt;?php $this-&gt;widget(&#39;Widget_Metas_Tag_Cloud&#39;, &#39;ignoreZeroCount=1&amp;limit=30&#39;)-&gt;to($tags); ?&gt;
+
+&lt;ul class=&#34;tags-list&#34;&gt;
+
+&lt;?php while($tags-&gt;next()): ?&gt;
+
+    &lt;li&gt;&lt;a style=&#34;color: rgb(&lt;?php echo(rand(0, 255)); ?&gt;, &lt;?php echo(rand(0,255)); ?&gt;, &lt;?php echo(rand(0, 255)); ?&gt;)&#34; href=&#34;&lt;?php $tags-&gt;permalink(); ?&gt;&#34; title=&#39;&lt;?php $tags-&gt;name(); ?&gt;&#39;&gt;&lt;?php $tags-&gt;name(); ?&gt;&lt;/a&gt;&lt;/li&gt;
+
+&lt;?php endwhile; ?&gt;
+
+&lt;/ul&gt;
+</code></pre>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

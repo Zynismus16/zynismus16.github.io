@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>alt on Hello World</title>
+    <link>https://zynismus16.github.io/tags/alt/</link>
+    <description>Recent content in alt on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 24 Nov 2022 16:36:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/alt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3D max入门学习 Part.1</title>
+      <link>https://zynismus16.github.io/posts/10/</link>
+      <pubDate>Thu, 24 Nov 2022 16:36:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/10/</guid>
+      <description>Max界面与菜单栏讲解﻿ 基本工具 选择工具 快捷键:Q c tr l :加选 a l t :减选 有多种选择方式 交叉/窗口 移动工具 快捷键：w 轴向是可以锁定的,移动前</description>
+      <content:encoded><![CDATA[<h1 id="max界面与菜单栏讲解">Max界面与菜单栏讲解﻿</h1>
+<h2 id="基本工具">基本工具</h2>
+<h3 id="选择工具">选择工具</h3>
+<p>快捷键:Q</p>
+<p>c tr l :加选 a l t :减选 有多种选择方式 交叉/窗口</p>
+<h3 id="移动工具">移动工具</h3>
+<p>快捷键：w</p>
+<p>轴向是可以锁定的,移动前请先确认选择的轴向</p>
+<h3 id="旋转工具">旋转工具</h3>
+<p>快捷键:E</p>
+<p>外圈灰色进行旋转是于屏幕平行轴向进行旋转</p>
+<h3 id="缩放工具">缩放工具</h3>
+<p>快捷键:R</p>
+<p>有三种缩放方式，除特殊情况不要使用第三种﻿</p>
+<h2 id="进阶工具">进阶工具</h2>
+<h3 id="3d捕捉工具">3D捕捉工具</h3>
+<p>用来进行点对点的对齐以及快速单轴向对</p>
+<h3 id="角度捕捉工具">角度捕捉工具</h3>
+<p>对于旋转角度进行固定数值旋转</p>
+<h3 id="材质编辑器">材质编辑器</h3>
+<p>节点材质编辑器和层级材质编辑器，给与模型真正的颜色显示</p>
+<h3 id="对齐与镜像">对齐与镜像</h3>
+<p>对齐工具：补充无法进行点位吸附的一种对齐方式镜像：快速复制并且翻转模型，但是个人基本不用</p>
+<h1 id="3dmax软件常用快捷键">3DMAX软件常用快捷键</h1>
+<p><code>鼠标中键</code> 平移运动</p>
+<p><code>Alt + 鼠标中键</code> 旋转视图</p>
+<p><code>Alt + ctrl + 鼠标中键</code> 视图的放大缩小</p>
+<p><code>Ctrl + z</code> 恢复上一步</p>
+<p><code>Ctrl + y</code> 重复上一步</p>
+<p><code>Ctrl + a</code> 全选</p>
+<p><code>Ctrl + I</code> 反选</p>
+<p><code>G</code> 网格切换</p>
+<p><code>F</code> 前视图</p>
+<p><code>T</code> 顶视图</p>
+<p><code>L</code> 左视图</p>
+<p><code>B</code> 底视图</p>
+<p><code>Alt + W</code> 最 大化显示视图</p>
+<p><code>Ctrl + C</code> 将摄相机适配到视图</p>
+<p><code>Alt + Q</code> 将当前选择的物体隔离并最 大化显示在视图上， 其它物体暂时消失显示。</p>
+<p><code>C</code> 将所选的视图转换为摄相机视图</p>
+<p><code>w</code> 位移</p>
+<p><code>e</code> 旋转</p>
+<p><code>r</code> 放缩</p>
+<p><code>O</code> 显示降级适配(开关)</p>
+<p><code>V</code> 打开视图快捷键切换菜单，选择视图进行切换。</p>
+<p><code>+ </code>放大坐标轴</p>
+<p><code>-</code> 缩小坐标轴</p>
+<p><code>Ctrl + Atl + z</code> 在当前视图完全显示所有物体</p>
+<p><code>z</code> 在当前视图完全显示所选物体</p>
+<p><code>shift + 鼠标左键</code> 复制所选择的一个或多个物体</p>
+<p><code>Ctrl + 鼠标左键</code> 增加选择</p>
+<p><code>Alt + 鼠标左键</code> 减少选择</p>
+<p><code>H</code> 菜单选择物体</p>
+<p><code>M</code> 显示材质编辑器</p>
+<p><code>N</code> 打开动画记录按钮</p>
+<p><code>/?</code> 播放动画</p>
+<p><code>F3</code> 实体显示和线框显示的切换</p>
+<p><code>F4</code> 线框显示</p>
+<p><code>F9</code> 快速渲染</p>
+<p><code>F10</code> 显示渲染菜单
+<code>[ ] </code>分别放大或缩小一倍视图显示</p>
+<p><code>M</code> 材质</p>
+<p><code>z</code> 选择物最大</p>
+<p><code>ctrl + AlT + z</code> 满屏</p>
+<p><code>ctrl + x</code> 视图模式</p>
+<p><code>ALT + W</code> 最 大化</p>
+<p><code>Shift + Q =</code> 渲染</p>
+<p><code>F9 </code>视图切换</p>
+<p><code>F3 </code>显示降级适配(开关)</p>
+<p><code>O</code> 适应透视图格点</p>
+<p><code>Shift + Ctrl + A</code> 排列</p>
+<p><code>Alt + A</code> 角度捕捉(开关)</p>
+<p><code>A</code> 动画模式 (开关)</p>
+<p><code>N</code> 改变到后视图</p>
+<p><code>K</code> 背景锁定(开关)</p>
+<p><code>Alt + Ctrl + B</code> 前一时间单位</p>
+<p><code>.</code> 下一时间单位</p>
+<p><code>,</code> 改变到上(Top)视图</p>
+<p><code>T</code> 改变到底(Bottom)视图</p>
+<p><code>B</code> 改变到相机(Camera)视图</p>
+<p><code>C</code> 改变到前(Front)视图</p>
+<p><code>F</code> 改变到等大的用户(User)视图</p>
+<p><code>U</code> 改变到右(Right)视图</p>
+<p><code>R</code> 改变到透视(Perspective)图</p>
+<p><code>P</code> 循环改变选择方式</p>
+<p><code>Ctrl + F</code> 默认灯光(开关)</p>
+<p><code>Ctrl + L</code> 删除物体</p>
+<p><code>DEL</code> 当前视图暂时失效</p>
+<p><code>D</code> 是否显示几何体内框(开关)</p>
+<p><code>Ctrl + E</code> 显示第 一个工具条</p>
+<p><code>Alt + 1</code> 专家模式全屏(开关)</p>
+<p><code>Ctrl + X</code> 暂存(Hold)场景</p>
+<p><code>Alt + Ctrl + H</code> 取回(Fetch)场景</p>
+<p><code>Alt + Ctrl + F</code> 冻结所选物体</p>
+<p><code>6</code> 跳到最 后一帧</p>
+<p><code>END</code> 跳到第 一帧</p>
+<p><code>HOME</code> 显示/隐藏相机(Cameras)</p>
+<p><code>Shift + C</code> 显示/隐藏几何体(Geometry)</p>
+<p><code>Shift + O</code> 显示/隐藏网格(Grids)</p>
+<p><code>G</code> 显示/隐藏帮助(Helpers)物体</p>
+<p><code>Shift + H</code> 显示/隐藏光源(Lights)</p>
+<p><code>Shift + L</code> 显示/隐藏粒子系统(Particle Systems)</p>
+<p><code>Shift + P</code> 显示/隐藏空间扭曲(Space Warps)物体</p>
+<p><code>Shift + W</code> 锁定用户界面(开关)</p>
+<p><code>Alt + 0</code> 匹配到相机(Camera)视图</p>
+<p><code>Ctrl + C</code> 材质(Material)编辑器</p>
+<p><code>M</code> 最 大化</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

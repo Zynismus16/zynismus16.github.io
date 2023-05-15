@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>nas on Hello World</title>
+    <link>https://zynismus16.github.io/tags/nas/</link>
+    <description>Recent content in nas on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 18 Apr 2023 08:50:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/nas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>升级局域网并安装群晖nas</title>
+      <link>https://zynismus16.github.io/posts/110/</link>
+      <pubDate>Tue, 18 Apr 2023 08:50:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/110/</guid>
+      <description>DayN 越来越忙，前几天查看论坛发现，其实目前组的raid1机械硬盘存储库最快也就200MB，因为是同时拷贝同一份文件到两块硬盘，就算加了SSD缓</description>
+      <content:encoded><![CDATA[<h1 id="dayn">DayN</h1>
+<p>越来越忙，前几天查看论坛发现，其实目前组的raid1机械硬盘存储库最快也就200MB，因为是同时拷贝同一份文件到两块硬盘，就算加了SSD缓存等SSD缓存的空间用完还是会降速到机械硬盘的速度（因为缓存用完后群晖会将文件直接写入存储池）。
+而测试群晖ssd缓存的回写速度最快才10~MB/S。 谢特！
+想在现在的基础上加速，只能更换读写速度更快的存储设备或者更改为raid10(在raid1的基础上应用raid0组成条带空间。一份文件会被切分成多份存储到不同硬盘中，这样同时写入的理论速度将会成倍增加).
+先这样吧，等老板回来后再给他说，看他升不升级。</p>
+<h1 id="day8">Day8</h1>
+<p>今日将将所有硬盘取出手动降级dsm到6.2.4，终于看见了跳过连续IO选项，遂取消勾选。再次测试，哦豁，虽然是在往缓存中写入数据了，不过速度还是依旧200多MB，下载倒是快了，最快的可以达到1GB每秒。先这样。</p>
+<p>堆叠线也到了，刚好插上测试电脑对接的模块及线的问题&hellip;.</p>
+<p>哦豁，速度还是只有200多MB，排除光模块及线的问题，现在需要去找电脑或者网卡的问题，不过我也注意到一点，在这两台特别慢的电脑上，如果对该电脑进行网络写操作，电脑将变的很卡，虽然在任务管理器中监视设备性能并没有发现短板，但是卡顿现象确实发生了，对比不卡的电脑，除了硬件不一致外操作系统也没更新，晚上更新下系统试试。</p>
+<h1 id="day7">Day7</h1>
+<p>工作繁忙，暂时无暇顾及网络，暂时搁置问题排查，等前两天买的成品万兆堆叠线到货后再次短接测试。排除线材及光模块的问题。
+上班时想到查看硬盘写入，遂打开群晖资源管理对硬盘写入进行监控，同时拷贝文件到相应存储池，发现缓存完全不参与。
+沟通群晖官方，DSM7+无法缓存连续IO，哦豁&hellip;
+手动降级安装dsm6版本。</p>
+<h1 id="day6">Day6</h1>
+<p>怀疑部分硬件问题，尝试将两台电脑对接，使用iperf及smb文件传输测速。OMG！速度不达标，还是只有200MB/S。
+继续查找问题所在&hellip;&hellip;</p>
+<h1 id="day5">Day5</h1>
+<p>网卡到货，安装测试。
+好家伙，速度没有丝毫提升，开始头疼。
+对网卡属性进行配置，开巨型帧，关传输缓存，关闭远程分差api。无效果。
+用最高配置电脑使用Homebox测速，能跑满宽带。iperf还是无法跑满宽带。</p>
+<h1 id="day4">Day4</h1>
+<p>查找了一天的问题，发现买的网卡是pcie x8的，电脑的pcie是x4的，怀疑可能是带宽不够，看到一块tp的tl-nt521f单口万兆网卡，购买等到货。</p>
+<h1 id="day3">Day3</h1>
+<p>所有光纤全部到位，开始安装硬件设备，先安装三台电脑的万兆网卡，安装路由器及相关光模块。
+安装群晖nas硬盘，配置两块m2做RAID1缓存阵列，两块16T硬盘做RAID1数据盘。
+<strong>对局域网宽带测速</strong>
+问题来了，不管用iperf测试还是smb本地文件传输均无法达到万兆，最大速度才200MB/S。开始找问题。</p>
+<h1 id="day2">Day2</h1>
+<p>硬件基本到货，开始安装。
+先把光纤走好，下午请宽带运营商师傅来进行熔纤。</p>
+<h1 id="day1">Day1</h1>
+<p>配件陆陆续续到货，暂时无法安装。</p>
+<h1 id="起因">起因</h1>
+<p>由于公司存储视频素材的硬盘坏的很快，所以计划购买群晖NAS做素材仓库并挂载到电脑进行工程备份。
+领导决定使用群晖DS1821+做NAS，购买万兆路由器及相应网卡做万兆局域网。
+以下是具体配置单：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">定位</th>
+<th style="text-align:center">品牌</th>
+<th style="text-align:center">数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">NAS</td>
+<td style="text-align:center">群晖DS1821+</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">缓存盘</td>
+<td style="text-align:center">致态TiPlus 7100 1TB</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">存储盘</td>
+<td style="text-align:center">西数  HC550 16T</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">NAS拓展卡</td>
+<td style="text-align:center">intelx520SR1DA2</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">路由器</td>
+<td style="text-align:center">TL-R6812TP-AC</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">光模块</td>
+<td style="text-align:center">TL-SM512LM-300m</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">跳线</td>
+<td style="text-align:center">单模双芯2.0mm</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">光转电口模块</td>
+<td style="text-align:center">ZK-10G-TX</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">光纤</td>
+<td style="text-align:center">山泽 4芯OM3万兆室内100M</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">ups</td>
+<td style="text-align:center">雷迪司H1000M</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">网卡</td>
+<td style="text-align:center">万兆通(10Gtek) X520-DA1</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

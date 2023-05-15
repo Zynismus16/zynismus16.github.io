@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>多级 on Hello World</title>
+    <link>https://zynismus16.github.io/tags/%E5%A4%9A%E7%BA%A7/</link>
+    <description>Recent content in 多级 on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 11 Jan 2022 06:56:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/%E5%A4%9A%E7%BA%A7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PicX 一款以Github为存储的图床程序</title>
+      <link>https://zynismus16.github.io/posts/20/</link>
+      <pubDate>Tue, 11 Jan 2022 06:56:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/20/</guid>
+      <description>官方描述 灵魂拷问，你为图床问题烦恼过吗? 用 Hexo、VuePress、Hugo 等静态博客写文章，不知图片保存到哪里去&amp;hellip; 特意花钱</description>
+      <content:encoded><![CDATA[<h2 id="官方描述">官方描述</h2>
+<blockquote>
+<p>灵魂拷问，你为图床问题烦恼过吗?</p>
+<p>用 Hexo、VuePress、Hugo 等静态博客写文章，不知图片保存到哪里去&hellip;
+特意花钱租云服务器托管图片，太贵划不来，而且上传配置好繁琐&hellip; 网上复制的心仪图片的链接，用着用着某一天就失效了&hellip;
+使用其他的付费图床，速度慢，容量小，还限时、限流量&hellip; 想找一款真正免费、稳定、不限容量、访问速度还很快的图床&hellip; &hellip;&hellip;
+那么，快来试试 PicX 图床 吧，专为技术博主打造，谁用谁知道~</p>
+<p>只需选择一个 GitHub 仓库作为图床，然后在 PicX 官网 完成 Token 绑定和相应配置就能使用了。</p>
+<p>PicX 图床 浏览器在线使用，免下载&amp;安装，如此简单。</p>
+</blockquote>
+<h2 id="功能特性">功能特性</h2>
+<p>支持 拖拽、复制粘贴、选择文件 等方式进行选择图片
+支持图片 重命名、哈希化（确保图片名唯一）和 设置命名前缀
+支持 批量上传图片、批量删除图片 和 批量复制图片外链
+支持 多级目录 管理 （创建多级目录 / 查看多级目录图片）
+支持 一键复制 图片外链和 一键转换 Markdown 格式
+支持 图床管理（对仓库图片的 增删改查）
+支持 图片压缩 (内置三款压缩算法，可在上传前自动压缩，效果极佳)
+支持 暗夜模式 (自由切换 / 自动切换)
+支持 PWA
+i18n
+设置图片水印
+支持其他 Git 厂商 （例如：Gitee / Coding）</p>
+<p>该图床可以自己搭建或者直接使用官方搭建好的，只需要使用自己的Github账户创建一个仓库，并创建一个能够访问仓库的Token。
+及其简单，适合小白使用</p>
+<p>官方文档：<a href="https://picx-docs.xpoet.cn/tutorial/get-start.html">https://picx-docs.xpoet.cn/tutorial/get-start.html</a>
+官方提供的图床：<a href="https://picx.xpoet.cn/">https://picx.xpoet.cn</a></p>
+<h2 id="预览">预览</h2>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220111/001.tq4fd0wzm4w.jpg" alt="001"  />
+
+<img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220111/002.62l28xvezng0.jpg" alt="002"  />
+
+<img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220111/004.237drmh6amps.jpg" alt="004"  />
+
+<img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220111/003.10doowq2ooe8.jpg" alt="003"  />
+
+<img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220111/001.3i1505xxvn20.jpg" alt="001"  />
+</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

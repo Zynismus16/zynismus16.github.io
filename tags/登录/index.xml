@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>登录 on Hello World</title>
+    <link>https://zynismus16.github.io/tags/%E7%99%BB%E5%BD%95/</link>
+    <description>Recent content in 登录 on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 13 Mar 2022 07:53:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/%E7%99%BB%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PC浏览器获取京东Cookie教程</title>
+      <link>https://zynismus16.github.io/posts/17/</link>
+      <pubDate>Sun, 13 Mar 2022 07:53:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/17/</guid>
+      <description>打开电脑浏览器新建一个无痕页面访问网址 https://m.jd.com/ 按键盘F12键打开开发者工具，然后点下图中的图标，切换到触屏版界面浏览！ 此时是未登录状态(建议使用手</description>
+      <content:encoded><![CDATA[<ol>
+<li>打开电脑浏览器新建一个无痕页面访问网址 <a href="/https://m.jd.com/">https://m.jd.com/</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220209/image.4cuttlly8e80.jpg" alt="image"  />
+
+<img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220209/image.3vazgekqkg80.jpg" alt="image"  />
+</p>
+<ol>
+<li>按键盘F12键打开开发者工具，然后点下图中的图标，切换到触屏版界面浏览！</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220209/image.ncemte7lzts.jpg" alt="image"  />
+</p>
+<ol>
+<li>此时是未登录状态(建议使用手机短信验证码登录)，如已登录请忽略此步骤</li>
+</ol>
+<p>使用手机短信验证码登录(此方式cookie有效时长大概31天，其他登录方式比较短)</p>
+<p>点击网页右下角未登录按钮登录手机号。</p>
+<p>右边的开发者窗口选择箭头标识的Network或者网络窗口，没有的点击箭头指向的→符号选择。</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220209/image.o08ga1p4j1c.jpg" alt="image"  />
+</p>
+<ol>
+<li>此时如果需要输入手势验证码请多试几次，由于鼠标操作没有触摸方便，容易识别失败。</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220209/image.3u8vnl4begs0.jpg" alt="image"  />
+</p>
+<p>登录成功</p>
+<ol>
+<li>获取cookie</li>
+</ol>
+<p>现在看向开发者工具栏，下面会有很多链接，这时可以先点击红框1清除</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220209/image.3vw940vlk480.jpg" alt="image"  />
+</p>
+<p>然后点击左侧网页中的右下角 我的</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220209/image.39oj0vz3urs0.jpg" alt="image"  />
+</p>
+<p>这时右侧应该会多出来几个链接，如上图</p>
+<p>选择红框中有 log那个链接</p>
+<p>在弹出来的窗口下翻，一直翻到箭头所指的内容 cookie开头的</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/Zynismus16/Picture@master/20220209/image.2iup0s28qxy0.jpg" alt="image"  />
+</p>
+<p>复制整个段落即可</p>
+<p>ps：可直接将该段粘贴到 <a href="http://nas.cxynas.top:5701/#/login">http://nas.cxynas.top:5701/#/login</a></p>
+<p>然后点击登录即可畅享京东挂机自动签到做活动</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

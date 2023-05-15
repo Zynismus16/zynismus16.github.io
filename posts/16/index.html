@@ -1,0 +1,140 @@
+<!doctype html><html lang=zh-cn dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Typecho常用函数 | Hello World</title><meta name=keywords content="typecho,输出,文章,作者,首页"><meta name=description content="Typecho常用函数： 1、网站名称 <?php $this->options->title() ?> 2、网站网址 <?php $this->options ->siteUrl(); ?> 3、站点说明 <?php $this->options->description() ?> 4、文章完整路径和标题 <?php $this->archiveTitle(' &amp;raquo; ', < span class=&#34;string&#34;>'', ' | '); ?><?php $this ->options->title(); ?> 5、模板地"><meta name=author content="<Six"><link rel=canonical href=https://zynismus16.github.io/posts/16/><link crossorigin=anonymous href=/assets/css/stylesheet.205eb3a418a3d1e1b761d44bb63049016e02d2f2ec23878bf417fdeb514df388.css integrity="sha256-IF6zpBij0eG3YdRLtjBJAW4C0vLsI4eL9Bf961FN84g=" rel="preload stylesheet" as=style><link rel=icon href=https://zynismus16.github.io/images/favicon.png><link rel=icon type=image/png sizes=16x16 href=https://zynismus16.github.io/images/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://zynismus16.github.io/images/favicon-32x32.png><link rel=apple-touch-icon href=https://zynismus16.github.io/apple-touch-icon.png><link rel=mask-icon href=https://zynismus16.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Typecho常用函数"><meta property="og:description" content="Typecho常用函数： 1、网站名称 <?php $this->options->title() ?> 2、网站网址 <?php $this->options ->siteUrl(); ?> 3、站点说明 <?php $this->options->description() ?> 4、文章完整路径和标题 <?php $this->archiveTitle(' &amp;raquo; ', < span class=&#34;string&#34;>'', ' | '); ?><?php $this ->options->title(); ?> 5、模板地"><meta property="og:type" content="article"><meta property="og:url" content="https://zynismus16.github.io/posts/16/"><meta property="og:image" content="https://zynismus16.github.io/papermod-cover.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-05-11T10:53:00+00:00"><meta property="article:modified_time" content="2022-05-11T10:53:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://zynismus16.github.io/papermod-cover.png"><meta name=twitter:title content="Typecho常用函数"><meta name=twitter:description content="Typecho常用函数： 1、网站名称 <?php $this->options->title() ?> 2、网站网址 <?php $this->options ->siteUrl(); ?> 3、站点说明 <?php $this->options->description() ?> 4、文章完整路径和标题 <?php $this->archiveTitle(' &amp;raquo; ', < span class=&#34;string&#34;>'', ' | '); ?><?php $this ->options->title(); ?> 5、模板地"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zynismus16.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Typecho常用函数","item":"https://zynismus16.github.io/posts/16/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Typecho常用函数","name":"Typecho常用函数","description":"Typecho常用函数： 1、网站名称 \u0026lt;?php $this-\u0026gt;options-\u0026gt;title() ?\u0026gt; 2、网站网址 \u0026lt;?php $this-\u0026gt;options -\u0026gt;siteUrl(); ?\u0026gt; 3、站点说明 \u0026lt;?php $this-\u0026gt;options-\u0026gt;description() ?\u0026gt; 4、文章完整路径和标题 \u0026lt;?php $this-\u0026gt;archiveTitle(\u0026#39; \u0026amp;raquo; \u0026#39;, \u0026lt; span class=\u0026#34;string\u0026#34;\u0026gt;\u0026#39;\u0026#39;, \u0026#39; | \u0026#39;); ?\u0026gt;\u0026lt;?php $this -\u0026gt;options-\u0026gt;title(); ?\u0026gt; 5、模板地","keywords":["typecho","输出","文章","作者","首页"],"articleBody":"Typecho常用函数：\n1、网站名称\n\u003c?php $this-\u003eoptions-\u003etitle() ?\u003e 2、网站网址\n\u003c?php $this-\u003eoptions -\u003esiteUrl(); ?\u003e 3、站点说明\n\u003c?php $this-\u003eoptions-\u003edescription() ?\u003e 4、文章完整路径和标题\n\u003c?php $this-\u003earchiveTitle(' \u0026raquo; ', \u003c span class=\"string\"\u003e'', ' | '); ?\u003e\u003c?php $this -\u003eoptions-\u003etitle(); ?\u003e 5、模板地址\n\u003c?php $this-\u003eoptions-\u003ethemeUrl(); ?\u003e 6、导入模板文件夹内的php文件\n\u003c?php $this-\u003eneed('.php'); ?\u003e 7、输出文章或单页面的作者\n\u003c?php $this-\u003eauthor(); ?\u003e 8、输出作者gravatar头像\n//此处是输出完整的 img 标签，40 是头像的宽高\r\u003c ?php $this-\u003eauthor-\u003egravatar('40') ?\u003e 9、作者文章列表链接\n//Typecho支持多用户博客时，按作者获取该作者文章连接\r\u003c?php $this-\u003eauthor-\u003epermalink (); ?\u003e 10、作者个人主页链接\n//Typecho 支持多用户博客，此处输出作者个人主页地址\r\u003c?php $this-\u003eauthor-\u003eurl(); ?\u003e 11 、作者的邮箱地址\n\u003c?php $this-\u003eauthor-\u003email(); ?\u003e 12、上一篇与下一篇调用代码\n// 上一篇\r\u003c?php $this-\u003ethePrev(); ?\u003e\r// 下一篇\r\u003c?php $this-\u003etheNext(); ?\u003e 13、typecho中is语法是否为首页并输出相关内容\n\u003c?php if ($this-\u003eis('index')): ?\u003e\r// 首页输出内容\r\u003c?php elseif ($this-\u003eis('category')): ?\u003e\r// 按照分类输出内容\r\u003c?php else: ?\u003e\r// 不是首页、分类输出内容\r\u003c?php endif; ?\u003e 14、获取文章或页面评论数\n\u003c?php $this-\u003ecommentsNum('No Comments', '1 Comment' , '%d Comments'); ?\u003e 15、截取文章指定字数（可用于首页显示文章摘要）\n// 截取350字并以\"...\"结尾\r\u003c?php $this-\u003eexcerpt(350, '...'); ?\u003e 16、调用自定义字段\n\u003c?php $this-\u003efields-\u003efieldName ?\u003e 17、获取 RSS 地址\n\u003c?php $this-\u003eoptions-\u003efeedUrl(); ?\u003e 18、获取最新文章\n\u003c?php $this-\u003ewidget('Widget_Contents_Post_Recent', 'pageSize=8\u0026type=category')-\u003eparse('{title}'); ?\u003e 19、获取分类名称，不带链接\n// 不带连接的获取分类\r\u003c?php $this-\u003ecategory(',', false); ?\u003e\r// 获取所有分类\r\u003c?php $this-\u003ewidget('Widget_Metas_Category_List')-\u003elistCategories('wrapClass=widget-list'); ?\u003e\r// 自定义分类\r\u003c?php $category = NULL; $this-\u003ewidget('Widget_Metas_Category_List')-\u003eto($category); ?\u003e\r\u003c?php while ($category-\u003enext()): ?\u003e\r\u003c?php $category-\u003ename(); ?\u003e\r\u003c?php endwhile; ?\u003e 20、获取文章分类列表\n\u003c?php $this-\u003ewidget('Widget_Metas_Category_List')-\u003eparse('{name} ({count})'); ?\u003e 21、获取某分类下的POST文章\n// 注意参数 mid=1\r\u003c?php $this-\u003ewidget('Widget_Archive@index', 'pageSize=8\u0026type=category', 'mid=1')\r-\u003eparse('{title}'); ?\u003e 22、获取最新评论列表\n\u003c?php $this-\u003ewidget('Widget_Comments_Recent')-\u003eto($comments); ?\u003e\r\u003c?php while($comments-\u003enext()): ?\u003e\r\u003c?php $comments-\u003eauthor(false); ?\u003e\r: \u003c?php $comments-\u003eexcerpt(50, '...'); ?\u003e\r\u003c?php endwhile; ?\u003e 23、首页获取限制条数的最新文章(可用于置顶操作类)\n\u003c?php while ($this-\u003enext()): ?\u003e\r\u003c?php if ($this-\u003esequence \u003c= 3): ?\u003e\r//这里编写html逻辑\r\u003c?php endif; ?\u003e\r\u003c?php endwhile; ?\u003e 24、获取访客最新评论，只显示访客评论不显示博主自己发的评论\n\u003c?php $this-\u003ewidget('Widget_Comments_Recent','ignoreAuthor=true')-\u003eto($comments); ?\u003e\r\u003c?php while($comments-\u003enext()): ?\u003e\r\u003c?php $comments-\u003eauthor(false); ?\u003e: \u003c?php $comments-\u003eexcerpt(50, '...'); ?\u003e\r\u003c?php endwhile; ?\u003e 25、文章按时间归档\n\u003c?php\r$this-\u003ewidget('Widget_Contents_Post_Date', 'type=month\u0026format=F Y')-\u003eparse('{date}');\r?\u003e 26、获取标签云\n// 输出标签云\r\u003c?php $this-\u003ewidget('Widget_Metas_Tag_Cloud', 'sort=mid\u0026ignoreZeroCount=1\u0026desc=0\u0026limit=30')-\u003eto($tags); ?\u003e\r\u003c?php if($tags-\u003ehave()): ?\u003e\r\u003c?php while ($tags-\u003enext()): ?\u003e\r\u003c?php $tags-\u003ename(); ?\u003e\r\u003c?php endwhile; ?\u003e\r\u003c?php else: ?\u003e\r\u003c?php _e('没有任何标签'); ?\u003e\r\u003c?php endif; ?\u003e\r// 输出随机颜色标签云\r\u003c?php $this-\u003ewidget('Widget_Metas_Tag_Cloud', 'ignoreZeroCount=1\u0026limit=30')-\u003eto($tags); ?\u003e\r\u003c?php while($tags-\u003enext()): ?\u003e\r\u003c?php $tags-\u003ename(); ?\u003e\r\u003c?php endwhile; ?\u003e\r","wordCount":"858","inLanguage":"en","datePublished":"2022-05-11T10:53:00Z","dateModified":"2022-05-11T10:53:00Z","author":{"@type":"Person","name":"\u003cSix"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zynismus16.github.io/posts/16/"},"publisher":{"@type":"Organization","name":"Hello World","logo":{"@type":"ImageObject","url":"https://zynismus16.github.io/images/favicon.png"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://zynismus16.github.io/ accesskey=h title="Hello World (Alt + H)"><img src=https://zynismus16.github.io/images/favicon.png alt aria-label=logo height=35>Hello World</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://zynismus16.github.io/ title=主页><span>主页</span></a></li><li><a href=https://zynismus16.github.io/search title=搜索><span>搜索</span></a></li><li><a href=https://zynismus16.github.io/atlas title=图册><span>图册</span></a></li><li><a href=https://zynismus16.github.io/archives title=存档><span>存档</span></a></li><li><a href=https://zynismus16.github.io/links title=友链><span>友链</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://zynismus16.github.io/>主页</a>&nbsp;»&nbsp;<a href=https://zynismus16.github.io/posts/>Posts</a></div><h1 class=post-title>Typecho常用函数</h1><div class=post-meta><span title='2022-05-11 10:53:00 +0000 UTC'>2022-05-11</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;&lt;Six&nbsp;|&nbsp;<a href=https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content rel="noopener noreferrer" target=_blank>&lt;Six</a></div></header><div class=post-content><p>Typecho常用函数：</p><p>1、网站名称</p><pre tabindex=0><code>&lt;?php $this-&gt;options-&gt;title() ?&gt;
+</code></pre><p>2、网站网址</p><pre tabindex=0><code>&lt;?php $this-&gt;options -&gt;siteUrl(); ?&gt;
+</code></pre><p>3、站点说明</p><pre tabindex=0><code>&lt;?php $this-&gt;options-&gt;description() ?&gt;
+</code></pre><p>4、文章完整路径和标题</p><pre tabindex=0><code>&lt;?php $this-&gt;archiveTitle(&#39; &amp;raquo; &#39;, &lt; span class=&#34;string&#34;&gt;&#39;&#39;, &#39; | &#39;); ?&gt;&lt;?php $this -&gt;options-&gt;title(); ?&gt;
+</code></pre><p>5、模板地址</p><pre tabindex=0><code>&lt;?php $this-&gt;options-&gt;themeUrl(); ?&gt;
+</code></pre><p>6、导入模板文件夹内的php文件</p><pre tabindex=0><code>&lt;?php $this-&gt;need(&#39;.php&#39;); ?&gt;
+</code></pre><p>7、输出文章或单页面的作者</p><pre tabindex=0><code>&lt;?php $this-&gt;author(); ?&gt;
+</code></pre><p>8、输出作者gravatar头像</p><pre tabindex=0><code>//此处是输出完整的 img 标签，40 是头像的宽高
+
+&lt; ?php $this-&gt;author-&gt;gravatar(&#39;40&#39;) ?&gt;
+</code></pre><p>9、作者文章列表链接</p><pre tabindex=0><code>//Typecho支持多用户博客时，按作者获取该作者文章连接
+
+&lt;?php $this-&gt;author-&gt;permalink (); ?&gt;
+</code></pre><p>10、作者个人主页链接</p><pre tabindex=0><code>//Typecho 支持多用户博客，此处输出作者个人主页地址
+
+&lt;?php $this-&gt;author-&gt;url(); ?&gt;
+</code></pre><p>11 、作者的邮箱地址</p><pre tabindex=0><code>&lt;?php $this-&gt;author-&gt;mail(); ?&gt;
+</code></pre><p>12、上一篇与下一篇调用代码</p><pre tabindex=0><code>// 上一篇
+
+&lt;?php $this-&gt;thePrev(); ?&gt;
+
+// 下一篇
+
+&lt;?php $this-&gt;theNext(); ?&gt;
+</code></pre><p>13、typecho中is语法是否为首页并输出相关内容</p><pre tabindex=0><code>&lt;?php if ($this-&gt;is(&#39;index&#39;)): ?&gt;
+
+// 首页输出内容
+
+&lt;?php elseif ($this-&gt;is(&#39;category&#39;)): ?&gt;
+
+// 按照分类输出内容
+
+&lt;?php else: ?&gt;
+
+// 不是首页、分类输出内容
+
+&lt;?php endif; ?&gt;
+</code></pre><p>14、获取文章或页面评论数</p><pre tabindex=0><code>&lt;?php $this-&gt;commentsNum(&#39;No Comments&#39;, &#39;1 Comment&#39; , &#39;%d Comments&#39;); ?&gt;
+</code></pre><p>15、截取文章指定字数（可用于首页显示文章摘要）</p><pre tabindex=0><code>// 截取350字并以&#34;...&#34;结尾
+
+&lt;?php $this-&gt;excerpt(350, &#39;...&#39;); ?&gt;
+</code></pre><p>16、调用自定义字段</p><pre tabindex=0><code>&lt;?php $this-&gt;fields-&gt;fieldName ?&gt;
+</code></pre><p>17、获取 RSS 地址</p><pre tabindex=0><code>&lt;?php $this-&gt;options-&gt;feedUrl(); ?&gt;
+</code></pre><p>18、获取最新文章</p><pre tabindex=0><code>&lt;?php $this-&gt;widget(&#39;Widget_Contents_Post_Recent&#39;, &#39;pageSize=8&amp;type=category&#39;)-&gt;parse(&#39;&lt;li&gt;&lt;a href=&#34;{permalink}&#34;&gt;{title}&lt;/a&gt;&lt;/li&gt;&#39;); ?&gt;
+</code></pre><p>19、获取分类名称，不带链接</p><pre tabindex=0><code>// 不带连接的获取分类
+
+&lt;?php $this-&gt;category(&#39;,&#39;, false); ?&gt;
+
+// 获取所有分类
+
+&lt;?php $this-&gt;widget(&#39;Widget_Metas_Category_List&#39;)-&gt;listCategories(&#39;wrapClass=widget-list&#39;); ?&gt;
+
+// 自定义分类
+
+&lt;?php $category = NULL; $this-&gt;widget(&#39;Widget_Metas_Category_List&#39;)-&gt;to($category); ?&gt;
+
+&lt;?php while ($category-&gt;next()): ?&gt;
+
+&lt;a class=&#34;list-group-item list-group-item-action&#34; title=&#34;&lt;?php $category-&gt;description(); ?&gt;&#34; href=&#34;&lt;?php $category-&gt;permalink(); ?&gt;&#34;&gt;&lt;?php $category-&gt;name(); ?&gt;&lt;/a&gt;
+
+&lt;?php endwhile; ?&gt;
+</code></pre><p>20、获取文章分类列表</p><pre tabindex=0><code>&lt;?php $this-&gt;widget(&#39;Widget_Metas_Category_List&#39;)-&gt;parse(&#39;&lt;li&gt;&lt;a href=&#34;{permalink}&#34;&gt;{name}&lt;/a&gt; ({count})&lt;/li&gt;&#39;); ?&gt;
+</code></pre><p>21、获取某分类下的POST文章</p><pre tabindex=0><code>// 注意参数 mid=1
+
+&lt;?php $this-&gt;widget(&#39;Widget_Archive@index&#39;, &#39;pageSize=8&amp;type=category&#39;, &#39;mid=1&#39;)
+
+-&gt;parse(&#39;&lt;li&gt;&lt;a href=&#34;{permalink}&#34; title=&#34;{title}&#34;&gt;{title}&lt;/a&gt;&lt;/li&gt;&#39;); ?&gt;
+</code></pre><p>22、获取最新评论列表</p><pre tabindex=0><code>&lt;?php $this-&gt;widget(&#39;Widget_Comments_Recent&#39;)-&gt;to($comments); ?&gt;
+
+&lt;?php while($comments-&gt;next()): ?&gt;
+
+    &lt;li&gt;
+        &lt;a href=&#34;&lt;?php $comments-&gt;permalink(); ?&gt;&#34;&gt;
+
+           &lt;?php $comments-&gt;author(false); ?&gt;
+
+        &lt;/a&gt;: &lt;?php $comments-&gt;excerpt(50, &#39;...&#39;); ?&gt;
+
+    &lt;/li&gt;
+
+&lt;?php endwhile; ?&gt;
+</code></pre><p>23、首页获取限制条数的最新文章(可用于置顶操作类)</p><pre tabindex=0><code>&lt;?php while ($this-&gt;next()): ?&gt;
+
+&lt;?php if ($this-&gt;sequence &lt;= 3): ?&gt;
+
+    //这里编写html逻辑
+
+&lt;?php endif; ?&gt;
+
+&lt;?php endwhile; ?&gt;
+</code></pre><p>24、获取访客最新评论，只显示访客评论不显示博主自己发的评论</p><pre tabindex=0><code>&lt;?php $this-&gt;widget(&#39;Widget_Comments_Recent&#39;,&#39;ignoreAuthor=true&#39;)-&gt;to($comments); ?&gt;
+
+    &lt;?php while($comments-&gt;next()): ?&gt;
+
+    &lt;li&gt;&lt;a href=&#34;&lt;?php $comments-&gt;permalink(); ?&gt;&#34;&gt;&lt;?php $comments-&gt;author(false); ?&gt;&lt;/a&gt;: &lt;?php $comments-&gt;excerpt(50, &#39;...&#39;); ?&gt;&lt;/li&gt;
+
+&lt;?php endwhile; ?&gt;
+</code></pre><p>25、文章按时间归档</p><pre tabindex=0><code>&lt;?php
+     $this-&gt;widget(&#39;Widget_Contents_Post_Date&#39;, &#39;type=month&amp;format=F Y&#39;)-&gt;parse(&#39;&lt;li&gt;&lt;a href=&#34;{permalink}&#34;&gt;{date}&lt;/a&gt;&lt;/li&gt;&#39;);
+?&gt;
+</code></pre><p>26、获取标签云</p><pre tabindex=0><code>// 输出标签云
+
+&lt;?php $this-&gt;widget(&#39;Widget_Metas_Tag_Cloud&#39;, &#39;sort=mid&amp;ignoreZeroCount=1&amp;desc=0&amp;limit=30&#39;)-&gt;to($tags); ?&gt;
+
+&lt;?php if($tags-&gt;have()): ?&gt;
+
+&lt;ul class=&#34;tags-list&#34;&gt;
+
+&lt;?php while ($tags-&gt;next()): ?&gt;
+
+    &lt;li&gt;&lt;a href=&#34;&lt;?php $tags-&gt;permalink(); ?&gt;&#34; rel=&#34;tag&#34; class=&#34;size-&lt;?php $tags-&gt;split(5, 10, 20, 30); ?&gt;&#34; title=&#34;&lt;?php $tags-&gt;count(); ?&gt; 个话题&#34;&gt;&lt;?php $tags-&gt;name(); ?&gt;&lt;/a&gt;&lt;/li&gt;
+
+&lt;?php endwhile; ?&gt;
+
+&lt;?php else: ?&gt;
+
+    &lt;li&gt;&lt;?php _e(&#39;没有任何标签&#39;); ?&gt;&lt;/li&gt;
+
+&lt;?php endif; ?&gt;
+
+&lt;/ul&gt;
+
+// 输出随机颜色标签云
+
+&lt;?php $this-&gt;widget(&#39;Widget_Metas_Tag_Cloud&#39;, &#39;ignoreZeroCount=1&amp;limit=30&#39;)-&gt;to($tags); ?&gt;
+
+&lt;ul class=&#34;tags-list&#34;&gt;
+
+&lt;?php while($tags-&gt;next()): ?&gt;
+
+    &lt;li&gt;&lt;a style=&#34;color: rgb(&lt;?php echo(rand(0, 255)); ?&gt;, &lt;?php echo(rand(0,255)); ?&gt;, &lt;?php echo(rand(0, 255)); ?&gt;)&#34; href=&#34;&lt;?php $tags-&gt;permalink(); ?&gt;&#34; title=&#39;&lt;?php $tags-&gt;name(); ?&gt;&#39;&gt;&lt;?php $tags-&gt;name(); ?&gt;&lt;/a&gt;&lt;/li&gt;
+
+&lt;?php endwhile; ?&gt;
+
+&lt;/ul&gt;
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://zynismus16.github.io/tags/typecho/>typecho</a></li><li><a href=https://zynismus16.github.io/tags/%E8%BE%93%E5%87%BA/>输出</a></li><li><a href=https://zynismus16.github.io/tags/%E6%96%87%E7%AB%A0/>文章</a></li><li><a href=https://zynismus16.github.io/tags/%E4%BD%9C%E8%80%85/>作者</a></li><li><a href=https://zynismus16.github.io/tags/%E9%A6%96%E9%A1%B5/>首页</a></li></ul><nav class=paginav><a class=prev href=https://zynismus16.github.io/posts/14/><span class=title>« 上一页</span><br><span>author.php打造用户中心社区的参数调用和使用方法</span></a>
+<a class=next href=https://zynismus16.github.io/posts/17/><span class=title>下一页 »</span><br><span>PC浏览器获取京东Cookie教程</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://zynismus16.github.io/>Hello World</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="复制";function s(){t.innerHTML="已复制",setTimeout(()=>{t.innerHTML="复制"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

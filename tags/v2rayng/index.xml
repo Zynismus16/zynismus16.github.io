@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>v2rayng on Hello World</title>
+    <link>https://zynismus16.github.io/tags/v2rayng/</link>
+    <description>Recent content in v2rayng on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 01 Feb 2022 21:33:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/v2rayng/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>v2rayNG使用教程</title>
+      <link>https://zynismus16.github.io/posts/6/</link>
+      <pubDate>Tue, 01 Feb 2022 21:33:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/6/</guid>
+      <description>购买订阅 购买ssr订阅或V2ray订阅。 推荐使用Wallless机场 或者一元机场。 Wallless优惠码： 9折优惠码： wallless2023 8折优惠码限年付： hey2023</description>
+      <content:encoded><![CDATA[<ol>
+<li>
+<p>购买订阅
+购买ssr订阅或V2ray订阅。
+推荐使用<a href="https://portal.wallless.xyz/#/register?code=gk0NQhHG">Wallless机场</a> 或者<a href="https://xn--4gq62f52gdss.com/#/register?code=TxCwNHQJ">一元机场</a>。
+Wallless优惠码：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="https://portal.wallless.xyz/#/register?code=gk0NQhHG">9折优惠码： wallless2023</a></th>
+<th style="text-align:center"><a href="https://portal.wallless.xyz/#/register?code=gk0NQhHG">8折优惠码限年付： hey2023</a></th>
+</tr>
+</thead>
+</table>
+</li>
+<li>
+<p>下载安装 V2rayNG</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="https://ghproxy.com/https://github.com/2dust/v2rayNG/releases/download/1.7.37/v2rayNG_1.7.37.apk">加速下载</a></th>
+<th style="text-align:center"><a href="https://github.com/2dust/v2rayNG/releases/download/1.7.37/v2rayNG_1.7.37.apk">官方下载</a></th>
+<th style="text-align:center"><a href="https://play.google.com/store/apps/details?id=com.v2ray.ang&amp;hl=zh&amp;gl=US">Google商店</a></th>
+</tr>
+</thead>
+</table>
+</li>
+<li>
+<p>设置订阅</p>
+</li>
+</ol>
+<ul>
+<li>复制订阅地址</li>
+<li>添加 V2ray 订阅
+打开 V2rayNG， 点击左上角三道杠 【☰】 → 点击 订【阅分组设置】 → 点击右上角 【➕】。填写一个名称，把 v2ray 订阅添加进去，点右上角保存图标 【✔】-&gt;退出订阅分组设置。
+<img loading="lazy" src="https://doc.miyun.app/images/subimg/vng/v2rayNG-sub1.webp" alt="添加订阅"  />
+</li>
+<li>修改 V2rayNG 代理模式
+<img loading="lazy" src="https://doc.miyun.app/images/subimg/vng/v2rayNG-sub2.webp" alt="修改代理模式"  />
+</li>
+<li>更新 V2rayNG 订阅
+<img loading="lazy" src="https://doc.miyun.app/images/subimg/vng/v2rayNG-sub3.webp" alt="更新订阅"  />
+</li>
+</ul>
+<blockquote>
+<p>在后期使用过程中，遇到多个节点不可用，请更新下订阅 更新时记得先关闭 vpn。如果更新订阅失败，尝试断开 vpn 连接后再更新。</p>
+</blockquote>
+<ul>
+<li>开启 V2rayNG 代理
+上一步更新订阅成功后，在刷新出来的节点服务器中选择一个，点击右下角图标开启代理，首次开启弹出连接请求点击确定。
+<img loading="lazy" src="https://doc.miyun.app/images/subimg/vng/v2rayNG-sub4.webp" alt="开启代理"  />
+</li>
+</ul>
+<blockquote>
+<p>启动后即可访问 youtube，google 等服务测试网络连通性。如果感觉网速不佳，尝试切换不同节点，或者升级订阅套餐。</p>
+</blockquote>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

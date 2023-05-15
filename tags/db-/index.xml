@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>db- on Hello World</title>
+    <link>https://zynismus16.github.io/tags/db-/</link>
+    <description>Recent content in db- on Hello World</description>
+    <image>
+      <title>Hello World</title>
+      <url>https://zynismus16.github.io/papermod-cover.png</url>
+      <link>https://zynismus16.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 02 Nov 2022 08:47:00 +0000</lastBuildDate><atom:link href="https://zynismus16.github.io/tags/db-/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Typecho数据库常用的API，创建/更新/读取/删除</title>
+      <link>https://zynismus16.github.io/posts/12/</link>
+      <pubDate>Wed, 02 Nov 2022 08:47:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/12/</guid>
+      <description>Typecho数据库常用API，整理了Typecho数据库常用的API，实现基本的CURD操作。创建（Create）、更新（Update）、</description>
+      <content:encoded><![CDATA[<p>Typecho数据库常用API，整理了Typecho数据库常用的API，实现基本的CURD操作。创建（Create）、更新（Update）、读取（Retrieve）和删除（Delete）</p>
+<h2 id="表创建和删除">表创建和删除</h2>
+<p>在Typecho插件开发过程中，往往需要创建自己的表。<code>Typecho_Db</code>类中的<code>query</code>函数，可用于执行所有sql语句，因此我们使用<code>query()</code>来进行表的创建、修改或者删除。</p>
+<pre tabindex="0"><code>$db= Typecho_Db::get();
+$prefix = $db-&gt;getPrefix();
+$db-&gt;query(&#39;create table &#39;.$prefix.&#39;metas xxxxx&#39;);
+</code></pre><p>注意，使用<code>query</code>方式创建表的时候，需要在表明前手动添加<code>$prefix</code>前缀，否则在后面的使用过程中会造成困惑。</p>
+<p>还可以使用<code>table.</code>来代替<code>$prefix</code>，typecho会自动识别并替换成指定的前缀。</p>
+<p>同理，修改或者删除Typecho数据库中表，按照同样的方式调用<code>query</code>即可。</p>
+<h2 id="数据查询">数据查询</h2>
+<h3 id="select查询表数据">select，查询表数据</h3>
+<p><code>select</code>语句是可以说Typecho插件开发中最常用的sql调用。</p>
+<pre tabindex="0"><code>$db = Typecho_Db::get();
+$query= $db-&gt;select()-&gt;from(&#39;table.metas&#39;);
+$result = $db-&gt;fetchAll($query);
+</code></pre><h3 id="说明">说明：</h3>
+<p>typecho中，<code>.</code>号具有特定的意义，这里<code>table.metas</code>表示这是一个metas表。实际上，typecho是自动将<code>table.</code>的字符使用<code>str_replace</code>替换成了<code>config.inc.php</code>中设定的前缀。</p>
+<h3 id="举例">举例：</h3>
+<p><code>$db-&gt;select()-&gt;from('table.metas');</code>将生成<code>SELECT * FROM typecho_metas WHERE (mid= '2' )，</code>其中<code>typecho_</code>是表前缀;
+而<code>$db-&gt;select()-&gt;from('metas');</code>将生成<code>SELECT * FROM metas WHERE (mid= '2' )，</code>注意这里没有了表前缀。
+指定表字段查询</p>
+<p>有时为了提高查询性能，需要指定查询表中特定的几个字段，那么可以使用下面的方式：</p>
+<pre tabindex="0"><code>$query= $db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;);
+echo $query; //SELECT `mid` , `name` FROM typecho_metas
+</code></pre><p>如果联合查询中，两个表存在相同的字段名，那么可以使用table.来指定表名：</p>
+<pre tabindex="0"><code>$query = $db-&gt;select(&#39;table.contents.cid&#39;)-&gt;from(&#39;table.contents&#39;)-&gt;join....
+</code></pre><h3 id="指定查询条件">指定查询条件</h3>
+<p>指定SQL查询的<code>where</code>语句，是最常用的api调用。</p>
+<pre tabindex="0"><code>$query= $db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;)-&gt;where(&#39;mid = ?&#39;, 2);
+echo $query; //SELECT * FROM typecho_metas WHERE (`mid` = &#39;2&#39; )
+</code></pre><p>如需要指定多个查询条件，直接多次调用<code>where</code>即可，将生成<code>and</code>关系的<code>where</code>条件</p>
+<pre tabindex="0"><code>$db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;)-&gt;where(&#39;mid = ?&#39;, 2)-&gt;where(&#39;name like ? &#39;, $name);
+</code></pre><p>使用<code>OR</code>关系的查询条件</p>
+<p>可以使用<code>orWhere()</code>函数来指定SQL查询的或条件。</p>
+<pre tabindex="0"><code>$db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;)-&gt;where(&#39;mid = ?&#39;, 2)-&gt;orWhere(&#39;mid = ? &#39;, 3);
+//SELECT `mid` , `name` FROM typecho_metas WHERE (`mid` = &#39;2&#39; ) OR (`mid` = &#39;3&#39; )
+</code></pre><p>指定查询范围</p>
+<p>在需要分页的场景下，分页是必需的操作。offset()和limit()分别用于指定起始位置和结束位置，即指定查询范围。</p>
+<pre tabindex="0"><code>$query = $db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;)-&gt;offset(2)-&gt;limit(3);
+echo $query;//SELECT `mid` , `name` FROM typecho_metas LIMIT 3 OFFSET 2
+</code></pre><p>Typecho中，还提供了一种简写的方法，见<code>page()</code>函数。</p>
+<pre tabindex="0"><code>$query = $db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;)-&gt;page(3,10);
+echo $query;//SELECT `mid` , `name` FROM typecho_metas LIMIT 10 OFFSET 20
+//表示取第三页，并取10条记录。
+</code></pre><h3 id="对查询结果进行排序">对查询结果进行排序</h3>
+<p>在Typecho中，使用<code>order()</code>函数和<code>Typecho_Db::SORT_DESC</code>指定查询结果的排序方式。</p>
+<pre tabindex="0"><code>$query = $db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;)-&gt;order(&#39;mid&#39;,Typecho_Db::SORT_DESC);
+echo $query;//SELECT `mid` , `name` FROM typecho_metas ORDER BY `mid` DESC
+</code></pre><p>Tips: <code>Typecho_Db::SORT_ASC </code>表示升序排序，<code>Typecho_Db::SORT_DESC</code>表示降序排序</p>
+<h3 id="联合查询">联合查询</h3>
+<p>联合查询是SQL的常用语法，在Typecho中，同样使用内置函数<code>join()</code>方便地进行联合查询。</p>
+<pre tabindex="0"><code>$query = $db-&gt;select()
+    -&gt;from(&#39;table.contents&#39;)
+    -&gt;join(&#39;table.comments&#39;, &#39;table.contents.cid = table.comments.cid&#39;,Typecho_Db::LEFT_JOIN)
+    -&gt;where(&#39;table.contents.type = ?&#39;, &#39;post&#39;);
+echo $query;
+//SELECT * FROM typechocontents LEFT JOIN typecho_comments ON typecho_contents.`cid` = typecho_comments.`cid` WHERE (typecho_contents.`type` = &#39;post&#39; )
+</code></pre><p><code>update</code>，更新表数据
+Typecho中，使用<code>update()</code>函数来进行更新表操作。但注意，update操作，需要借助于query执行。</p>
+<pre tabindex="0"><code>$update = $db-&gt;update(&#39;table.metas&#39;)-&gt;rows(array(&#39;name&#39;=&gt;&#39;case_in_cn&#39;))-&gt;where(&#39;mid=?&#39;,6);
+echo $update;//UPDATE typecho_metas SET `name` = &#39;some_name&#39; WHERE (`mid`=&#39;6&#39; )
+//执行后，返回收影响的行数。
+$updateRows= $db-&gt;query($update);
+</code></pre><p><code>insert</code>，插入数据
+Typecho中，使用<code>insert()</code>函数来进行表插入操作。同样，<code>insert</code>操作需要借助于<code>query</code>函数。</p>
+<pre tabindex="0"><code>$insert = $db-&gt;insert(&#39;table.metas&#39;)
+    -&gt;rows(array(&#39;mid&#39; =&gt; &#39;22&#39;, &#39;name&#39; =&gt; &#39;hello world&#39;));
+//将构建好的sql执行, 如果你的主键id是自增型的还会返回insert id
+$insertId = $db-&gt;query($insert);
+</code></pre><p><code>delete</code>，删除数据
+Typecho中使用<code>delete()</code>函数来删除数据表中的行。delete操作用于删除数据表中指定的行，同样需要借助<code>query</code>函数执行。</p>
+<pre tabindex="0"><code>$delete = $db-&gt;delete(&#39;table.metas&#39;)
+    -&gt;where(&#39;mid = ?&#39;, 2);
+//将构建好的sql执行, 会自动返回已经删除的记录数
+$deletedRows = $db-&gt;query($delete);
+</code></pre><p>数据库调试</p>
+<h2 id="查看查询语句">查看查询语句</h2>
+<p>在Typecho调试过程中，打印sql语句往往是很有帮助的。对于大于5.2版本的php，直接<code>echo $query</code>即可，对于小于5.2版本，则需要显式调用<code>__toString()</code>函数</p>
+<pre tabindex="0"><code>$select = $db-&gt;select()-&gt;from(&#39;table.metas&#39;);
+//如果版本大于php5.2
+echo $select;
+//如果小于php5.2
+echo $select-&gt;__toString();
+</code></pre>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Typecho对数据库的增删查改</title>
+      <link>https://zynismus16.github.io/posts/24/</link>
+      <pubDate>Mon, 02 Aug 2021 09:02:00 +0000</pubDate>
+      
+      <guid>https://zynismus16.github.io/posts/24/</guid>
+      <description>Typecho数据库提供了非常易用的api，和原生SQL写法没有太大的差别，同时也很好地处理了SQL常见的安全问题，如sql注入。本文从实用</description>
+      <content:encoded><![CDATA[<p>Typecho数据库提供了非常易用的api，和原生SQL写法没有太大的差别，同时也很好地处理了SQL常见的安全问题，如sql注入。本文从实用角度出发，介绍了typecho操作数据库的常用场景以及相关api用法。</p>
+<h1 id="表创建和删除">表创建和删除</h1>
+<p>在Typecho插件开发过程中，往往需要创建自己的表。上文提到Typecho_Db类中的query函数，可用于执行所有sql语句，因此我们使用query()来进行表的创建、修改或者删除。</p>
+<pre tabindex="0"><code>$db= Typecho_Db::get();
+$prefix = $db-&gt;getPrefix();
+$db-&gt;query(&#39;create table &#39;.$prefix.&#39;metas xxxxx&#39;);
+</code></pre><p><em>注意，使用query方式创建表的时候，需要在表明前手动添加$prefix前缀，否则在后面的使用过程中会造成困惑。
+还可以使用table.来代替$prefix，typecho会自动识别并替换成指定的前缀。</em></p>
+<p>同理，修改或者删除Typecho数据库中表，按照同样的方式调用query即可。</p>
+<h1 id="数据查询">数据查询</h1>
+<ol>
+<li>select，查询表数据</li>
+</ol>
+<p>select语句是可以说Typecho插件开发中最常用的sql调用。</p>
+<pre tabindex="0"><code>$db = Typecho_Db::get();
+$query= $db-&gt;select()-&gt;from(&#39;table.metas&#39;);
+$result = $db-&gt;fetchAll($query);
+</code></pre><p>*说明：
+typecho中，.号具有特定的意义，这里table.metas表示这是一个metas表。实际上，typecho是自动将table.的字符使用str_replace替换成了config.inc.php中设定的前缀。</p>
+<p>举例：</p>
+<p>$db-&gt;select()-&gt;from(&rsquo;table.metas&rsquo;);将生成SELECT * FROM typecho_metas WHERE (mid = &lsquo;2&rsquo; )，其中typecho_是表前缀；</p>
+<p>而$db-&gt;select()-&gt;from(&lsquo;metas&rsquo;);将生成SELECT <em>FROM metas WHERE (mid = &lsquo;2&rsquo; )，注意这里没有了表前缀。</em></p>
+<p>指定表字段查询
+有时为了提高查询性能，需要指定查询表中特定的几个字段，那么可以使用下面的方式：</p>
+<pre tabindex="0"><code>$query= $db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;);
+echo $query; //SELECT `mid` , `name` FROM typecho_metas
+</code></pre><p>如果联合查询中，两个表存在相同的字段名，那么可以使用table.来指定表名：</p>
+<pre tabindex="0"><code>$query = $db-&gt;select(&#39;table.contents.cid&#39;)-&gt;from(&#39;table.contents&#39;)-&gt;join....
+</code></pre><p>指定查询条件</p>
+<p>指定SQL查询的where语句，是最常用的api调用。</p>
+<pre tabindex="0"><code>$query= $db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;)-&gt;where(&#39;mid = ?&#39;, 2);
+echo $query; //SELECT * FROM typecho_metas WHERE (`mid` = &#39;2&#39; )
+</code></pre><p>如需要指定多个查询条件，直接多次调用where即可，将生成and关系的where条件</p>
+<pre tabindex="0"><code>$db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;)-&gt;where(&#39;mid = ?&#39;, 2)-&gt;where(&#39;name like ? &#39;, $name);
+</code></pre><p>使用OR关系的查询条件</p>
+<p>可以使用orWhere()函数来指定SQL查询的或条件。</p>
+<pre tabindex="0"><code>$db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;)-&gt;where(&#39;mid = ?&#39;, 2)-&gt;orWhere(&#39;mid = ? &#39;, 3);
+//SELECT `mid` , `name` FROM typecho_metas WHERE (`mid` = &#39;2&#39; ) OR (`mid` = &#39;3&#39; )
+</code></pre><p>指定查询范围</p>
+<p>在需要分页的场景下，分页是必需的操作。offset()和limit()分别用于指定起始位置和结束位置，即指定查询范围。</p>
+<pre tabindex="0"><code>$query = $db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;)-&gt;offset(2)-&gt;limit(3);
+echo $query;//SELECT `mid` , `name` FROM typecho_metas LIMIT 3 OFFSET 2
+</code></pre><p>Typecho中，还提供了一种简写的方法，见page()函数。</p>
+<pre tabindex="0"><code>$query = $db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;)-&gt;page(3,10);
+echo $query;//SELECT `mid` , `name` FROM typecho_metas LIMIT 10 OFFSET 20
+//表示取第三页，并取10条记录。
+</code></pre><p>对查询结果进行排序</p>
+<p>在Typecho中，使用order()函数和Typecho_Db::SORT_DESC指定查询结果的排序方式。</p>
+<pre tabindex="0"><code>$query = $db-&gt;select(&#39;mid&#39;,&#39;name&#39;)-&gt;from(&#39;table.metas&#39;)-&gt;order(&#39;mid&#39;,Typecho_Db::SORT_DESC);
+echo $query;//SELECT `mid` , `name` FROM typecho_metas ORDER BY `mid` DESC
+</code></pre><p>Typecho_Db::SORT_ASC 表示升序排序，Typecho_Db::SORT_DESC表示降序排序</p>
+<p>联合查询</p>
+<p>联合查询是SQL的常用语法，在Typecho中，同样使用内置函数join()方便地进行联合查询。</p>
+<pre tabindex="0"><code>$query = $db-&gt;select()
+    -&gt;from(&#39;table.contents&#39;)
+    -&gt;join(&#39;table.comments&#39;, &#39;table.contents.cid = table.comments.cid&#39;,Typecho_Db::LEFT_JOIN)
+    -&gt;where(&#39;table.contents.type = ?&#39;, &#39;post&#39;);
+echo $query;
+//SELECT * FROM typechocontents LEFT JOIN typecho_comments ON typecho_contents.`cid` = typecho_comments.`cid` WHERE (typecho_contents.`type` = &#39;post&#39; )
+</code></pre><h1 id="update更新表数据">update，更新表数据</h1>
+<p>Typecho中，使用update()函数来进行更新表操作。但注意，update操作，需要借助于query执行。</p>
+<pre tabindex="0"><code>$update = $db-&gt;update(&#39;table.metas&#39;)-&gt;rows(array(&#39;name&#39;=&gt;&#39;case_in_cn&#39;))-&gt;where(&#39;mid=?&#39;,6);
+echo $update;//UPDATE typecho_metas SET `name` = &#39;some_name&#39; WHERE (`mid`=&#39;6&#39; )
+//执行后，返回收影响的行数。
+$updateRows= $db-&gt;query($update);
+</code></pre><h1 id="insert插入数据">insert，插入数据</h1>
+<p>Typecho中，使用insert()函数来进行表插入操作。同样，insert操作需要借助于query函数。</p>
+<pre tabindex="0"><code>$insert = $db-&gt;insert(&#39;table.metas&#39;)
+    -&gt;rows(array(&#39;mid&#39; =&gt; &#39;22&#39;, &#39;name&#39; =&gt; &#39;hello world&#39;));
+//将构建好的sql执行, 如果你的主键id是自增型的还会返回insert id
+$insertId = $db-&gt;query($insert);
+</code></pre><h1 id="delete删除数据">delete，删除数据</h1>
+<p>Typecho中使用delete()函数来删除数据表中的行。delete操作用于删除数据表中指定的行，同样需要借助query函数执行。</p>
+<pre tabindex="0"><code>$delete = $db-&gt;delete(&#39;table.metas&#39;)
+    -&gt;where(&#39;mid = ?&#39;, 2);
+//将构建好的sql执行, 会自动返回已经删除的记录数
+$deletedRows = $db-&gt;query($delete);
+</code></pre><h1 id="数据库调试">数据库调试</h1>
+<p>在Typecho调试过程中，打印sql语句往往是很有帮助的。对于大于5.2版本的php，直接echo $query即可，对于小于5.2版本，则需要显式调用__toString()函数</p>
+<pre tabindex="0"><code>$select = $db-&gt;select()-&gt;from(&#39;table.metas&#39;);
+//如果版本大于php5.2
+echo $select;
+//如果小于php5.2
+echo $select-&gt;__toString();
+</code></pre>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
